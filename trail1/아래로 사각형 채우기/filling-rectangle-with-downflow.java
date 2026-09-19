@@ -9,16 +9,15 @@ public class Main {
         int n = Integer.parseInt(br.readLine());
 
         int[][] arr = new int[n][n]; 
-        int num = 1; 
 
         for (int i = 0; i < n; i++) {
+            // 정석 
+            int num = i + 1; 
             for (int j = 0; j < n; j++) {
                 arr[i][j] = num; 
                 System.out.print(arr[i][j] + " "); 
                 num += n; 
             }
-            num = 2; 
-            num += i; 
             System.out.println(); 
         } 
     }
