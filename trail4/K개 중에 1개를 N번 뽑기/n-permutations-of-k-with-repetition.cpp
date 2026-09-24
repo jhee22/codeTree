@@ -22,13 +22,13 @@ void dfs(int depth) {
 
     // 4. 현재 선택 가능한 것들 
     for (int i = 1; i <= K; i++) {
-        // 선택한 수 담기 
+        // 이번 자리에 선택한 숫자 i 를 넣기 
         selected.push_back(i);
 
-        // 다음 자리 숫자 호출
+        // 다음 자리 숫자 선택 시작 
         dfs(depth+1); 
 
-        // *** 선택 취소 *** 
+        // 이번 자리에서 선택한 숫자 선택 취소 (for 다음 자리를 위해)
         selected.pop_back(); 
 
     }
