@@ -4,6 +4,9 @@ using namespace std;
 int n;
 int x[1000];
 char dir[1000];
+
+// OFFSET : 1000 * 100 
+// 배열의 크기 : 1000 * 100 * 2 + 1 
 int black[200001] = {}; 
 int white[200001] = {}; 
 
@@ -20,8 +23,8 @@ int main() {
         if (dir[i] == 'L') {
             int end = start - (x[i] - 1); 
             for (int j = end; j <= start; j++) {
-                black[j + 100001] = 0; 
-                white[j + 100001] = 1;
+                black[j + 100000] = 0; 
+                white[j + 100000] = 1;
             }
             start = end; 
 
@@ -31,8 +34,8 @@ int main() {
         else if (dir[i] == 'R') {
             int end = start + (x[i] - 1); 
             for (int j = start; j <= end; j++) {
-                white[j + 100001] = 0;
-                black[j + 100001] = 1; 
+                white[j + 100000] = 0;
+                black[j + 100000] = 1; 
             }
             start = end; 
         }
